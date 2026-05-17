@@ -134,7 +134,7 @@ If WebDAV is enabled, the remote path will look like:
 Camera/Front Door/2026/05/17/12-30-45.mp4
 ```
 
-## Integration with SmartHome
+## Integration with SmartHome (https://github.com/afsutulov/SmartHome)
 
 If `notification_file.enabled=true`, VideoControl writes the local video path into:
 
