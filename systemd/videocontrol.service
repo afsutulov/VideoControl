@@ -1,0 +1,15 @@
+[Unit]
+Description=VideoControl RTSP motion recording service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/VideoControl --run --config /etc/videocontrol.conf
+Restart=always
+RestartSec=5
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

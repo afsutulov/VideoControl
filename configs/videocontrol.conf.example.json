@@ -1,0 +1,50 @@
+{
+  "logging": {
+    "level": "info",
+    "file": "/var/log/videocontrol.log",
+    "to_console": false
+  },
+  "storage": {
+    "base_dir": "/share"
+  },
+  "motion": {
+    "min_contour_area": 500,
+    "threshold": 25
+  },
+  "recording": {
+    "frame_width": 640,
+    "frame_height": 360,
+    "fps": 10,
+    "codec": "mp4v",
+    "post_recording": "5s",
+    "reconnect_delay": "5s"
+  },
+  "notification_file": {
+    "enabled": true,
+    "path": "/share/video.save"
+  },
+  "webdav": {
+    "enabled": false,
+    "url": "https://webdav.yandex.ru",
+    "username": "user@example.com",
+    "password": "CHANGE_ME",
+    "remote_base_dir": "Camera",
+    "timeout": "180s"
+  },
+  "cameras": [
+    {
+      "id": "front_door",
+      "name": "Front Door",
+      "enabled": true,
+      "rtsp": "rtsp://login:password@192.168.1.10:554/media/video2",
+      "description": "Main entrance camera"
+    },
+    {
+      "id": "yard",
+      "name": "Yard",
+      "enabled": false,
+      "rtsp": "rtsp://login:password@192.168.1.11:554/media/video2",
+      "description": "Disabled example camera"
+    }
+  ]
+}

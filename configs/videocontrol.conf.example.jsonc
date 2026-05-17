@@ -1,0 +1,73 @@
+{
+  // Logging settings.
+  // level: debug, info, warn, error.
+  // file: empty string means console only.
+  "logging": {
+    "level": "info",
+    "file": "/var/log/videocontrol.log",
+    "to_console": false
+  },
+
+  // Local storage root. Each camera gets its own subdirectory:
+  // <base_dir>/<camera_name>/<YYYY>/<MM>/<DD>/<HH-MM-SS>.mp4
+  "storage": {
+    "base_dir": "/share"
+  },
+
+  // Motion detection settings.
+  // Increase min_contour_area to ignore small movements/noise.
+  "motion": {
+    "min_contour_area": 500,
+    "threshold": 25
+  },
+
+  // Recording settings.
+  // post_recording means how long to continue recording after the last motion.
+  "recording": {
+    "frame_width": 640,
+    "frame_height": 360,
+    "fps": 10,
+    "codec": "mp4v",
+    "post_recording": "5s",
+    "reconnect_delay": "5s"
+  },
+
+  // Optional trigger file for SmartHome or another service.
+  // The file will contain the local path of the last saved video.
+  "notification_file": {
+    "enabled": true,
+    "path": "/share/video.save"
+  },
+
+  // Optional WebDAV upload.
+  // Works with Yandex Disk WebDAV and other WebDAV-compatible storage.
+  // Set enabled=false to keep recordings only locally.
+  "webdav": {
+    "enabled": false,
+    "url": "https://webdav.yandex.ru",
+    "username": "user@example.com",
+    "password": "CHANGE_ME",
+    "remote_base_dir": "Camera",
+    "timeout": "180s"
+  },
+
+  // RTSP cameras.
+  // You may add as many cameras as you need.
+  // Each enabled camera is processed in its own goroutine.
+  "cameras": [
+    {
+      "id": "front_door",
+      "name": "Front Door",
+      "enabled": true,
+      "rtsp": "rtsp://login:password@192.168.1.10:554/media/video2",
+      "description": "Main entrance camera"
+    },
+    {
+      "id": "yard",
+      "name": "Yard",
+      "enabled": false,
+      "rtsp": "rtsp://login:password@192.168.1.11:554/media/video2",
+      "description": "Disabled example camera"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+VideoControl
+*.log
+*.mp4
+.DS_Store
+.idea/
+.vscode/
