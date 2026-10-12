@@ -1,5 +1,7 @@
 # VideoControl
 
+[Русский](README.RU.md)
+
 VideoControl is a lightweight RTSP motion-recording service written in Go. It is designed as a companion project for small SmartHome installations and can be used as a minimal alternative to heavy video surveillance stacks.
 
 It watches one or more RTSP cameras, records short MP4 clips when motion is detected, stores videos locally, optionally writes a trigger file for another service, and can optionally upload recordings to Yandex Disk or any other WebDAV-compatible cloud storage.
